@@ -9,6 +9,8 @@ class Book extends Model
 {
     use SoftDeletes;
 
+    protected $guarded = [];
+
     public function author()
     {
         return $this->belongsTo('App\Models\Author');
