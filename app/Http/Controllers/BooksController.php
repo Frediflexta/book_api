@@ -40,12 +40,10 @@ class BooksController extends Controller
      */
     public function store(CreateBookRequest $request)
     {
-        $newlyCreatedBook = $this->booksServices->createBooks($request);
-        
         return response()->json([
             'status_code' => 201,
             'status' => 'success',
-            'data' => $newlyCreatedBook
+            'data' => $this->booksServices->createBooks($request) 
         ], 201);
     }
 
