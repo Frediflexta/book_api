@@ -13,6 +13,7 @@ To Setup the project, please follow these steps:
 
 
 ## Testing Apis
+- run `php artisan test` or `composer test` to run the tests.
 
 |Method                |URI                        
 |----------------|-------------------------------|
