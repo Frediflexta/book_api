@@ -56,4 +56,11 @@ class CreateBookTest extends TestCase
     {
         $this->getResponse('GET', '/api/v1/books')->assertOk();
     }
+
+    public function testDisplaySpecificBook()
+    {
+        $book = factory(Book::class)->create(['author_id' => factory(Author::class)]);
+
+        $this->getResponse('GET', "/api/v1/books/{$book->id}")->assertOk();
+    }
 }
