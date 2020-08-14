@@ -1,5 +1,7 @@
 # Book_Api
 
+![Laravel](https://github.com/Frediflexta/book_api/workflows/Laravel/badge.svg)
+
 To Setup the project, please follow these steps:
 
  - clone repo`git clone <repo address>`
