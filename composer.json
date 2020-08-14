@@ -53,17 +53,13 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ],
-        "test": [
-            "vendor/bin/phpunit --debug --verbose --coverage-clover build/logs/clover.xml"
-        ],
-        "test-one": [
-            "vendor/bin/phpunit --filter"
-        ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ]
+        ],
+        "test": "vendor/bin/phpunit --debug --verbose --coverage-clover build/logs/clover.xml",
+        "test-one": "vendor/bin/phpunit --filter"
     }
 }

@@ -63,4 +63,32 @@ class CreateBookTest extends TestCase
 
         $this->getResponse('GET', "/api/v1/books/{$book->id}")->assertOk();
     }
+
+    /**
+     * @test
+     */
+    public function testUpdateBook()
+    {
+        $book = factory(Book::class)->create([
+            'author_id' => factory(Author::class),
+        ]);
+        
+        $bookId = $book->id;
+        
+        $book = [
+            'name' => 'Test updated name',
+            'author' => 'TestUser'
+        ];
+
+        $this->getResponse('PUT', "/api/v1/books/{$bookId}", $book)->assertOk();
+    }
+
+    public function testDeleteABook()
+    {
+        $this->withoutExceptionHandling();
+        $book = factory(Book::class)->create([
+            'author_id' => factory(Author::class),
+        ]);
+        $this->getResponse('DELETE', "/api/v1/books/{$book->id}")->assertOk();
+    }
 }
