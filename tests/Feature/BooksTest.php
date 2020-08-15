@@ -93,7 +93,6 @@ class CreateBookTest extends TestCase
 
     public function testQueryParamsBook()
     {
-        $this->withoutExceptionHandling();
         $book = factory(Book::class)->create([
             'author_id' => factory(Author::class)->create()
         ]);
